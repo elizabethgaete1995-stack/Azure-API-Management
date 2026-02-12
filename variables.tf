@@ -35,9 +35,8 @@ variable "custom_tags" {
   type        = map(string)
   default     = {}
 }
-
 variable "inherit" {
-  description = "Si true, hereda tags desde el Resource Group."
+  description = "Si true, hereda tags del Resource Group y los mezcla con standard + custom."
   type        = bool
   default     = true
 }
@@ -65,24 +64,9 @@ variable "tenantid" {
   type        = string
 }
 
-variable "inherit" {
-  description = "Si true, hereda tags del Resource Group y los mezcla con standard + custom."
-  type        = bool
-  default     = true
-}
 ############################
 # Básicos APIM (obligatorios)
 ############################
-variable "rsg_name" {
-  description = "Resource Group donde se despliega APIM."
-  type        = string
-}
-
-variable "location" {
-  description = "Región Azure."
-  type        = string
-}
-
 variable "apim_name" {
   description = "Nombre del APIM (debe ser único)."
   type        = string
